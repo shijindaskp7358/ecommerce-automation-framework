@@ -9,7 +9,9 @@ class CheckoutPage(BasePage):
     CONTINUE_BUTTON = (By.ID,"continue")
     FINISH_BUTTON = (By.ID,"finish")
 
+
     def enter_checkout_details(self,firstname,lastname,postalcode):
+        self.click(self.FIRST_NAME)
         self.type_text(self.FIRST_NAME,firstname)
         self.type_text(self.LAST_NAME,lastname)
         self.type_text(self.POSTAL_CODE,postalcode)
@@ -19,3 +21,4 @@ class CheckoutPage(BasePage):
 
     def click_finish_button(self):
         self.click(self.FINISH_BUTTON)
+
