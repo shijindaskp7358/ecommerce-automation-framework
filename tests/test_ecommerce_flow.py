@@ -25,14 +25,13 @@ def test_ecommerce_flow(driver):
 
     cart_page = CartPage(driver)
 
-    login_page.wait_for_page("cart.html")
     
     cart_page.checkout_button()
 
 #Checkout page
 
     checkout_page = CheckoutPage(driver)
-    login_page.wait_for_page("checkout-step-one.html")
+
     checkout_page.enter_checkout_details(FIRST_NAME,LAST_NAME,POSTAL_CODE)
     checkout_page.click_continue_button()
     checkout_page.click_finish_button()

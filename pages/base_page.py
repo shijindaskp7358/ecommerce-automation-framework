@@ -15,7 +15,7 @@ class BasePage:
         element.send_keys(text)
 
     def get_text(self,locator):
-        return wait_for_visibility(self.driver,locator).text
+        return wait_for_clickable(self.driver,locator).text
     
     def is_displayed(self,locator):
         return wait_for_visibility(self.driver,locator).is_displayed()
