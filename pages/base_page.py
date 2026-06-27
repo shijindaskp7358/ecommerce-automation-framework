@@ -10,7 +10,7 @@ class BasePage:
         wait_for_clickable(self.driver,locator).click()
 
     def type_text(self,locator,text):
-        element = wait_for_clickable(self.driver,locator)
+        element = wait_for_visibility(self.driver,locator)
         element.clear()
         element.send_keys(text)
 
