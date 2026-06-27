@@ -24,6 +24,8 @@ def test_ecommerce_flow(driver):
 #Cart page
 
     cart_page = CartPage(driver)
+
+    login_page.wait_for_page("cart.html")
     
     cart_page.checkout_button()
 
