@@ -10,5 +10,7 @@ class CartPage(BasePage):
 
     def checkout_button(self):
 
-        self.click(self.CHECKOUT_BUTTON)
+        button = self.click(self.CHECKOUT_BUTTON)
+        self.driver.execute_script("arguments[0].click();",button)
+    
         
