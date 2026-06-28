@@ -25,8 +25,5 @@ jobs:
           run: |
               pip install -r requirements.txt
             
-        - name: Setup Chrome
-          uses: browser-actions/setup-chrome@v1
-
         - name: Run tests
           run : pytest -v
