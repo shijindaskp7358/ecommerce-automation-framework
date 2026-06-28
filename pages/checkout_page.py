@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
+from utils.wait_utils import wait_for_visibility
 
 class CheckoutPage(BasePage):
 
@@ -16,8 +17,8 @@ class CheckoutPage(BasePage):
         self.type_text(self.POSTAL_CODE,postalcode)
 
     def click_continue_button(self):
-        self.click(self.CONTINUE_BUTTON)
-        self.take_screenshot("debug_continue")
+        postal_field = wait_for_visibility(self.driver,self.POSTAL_CODE)
+        postal_field.submit()
 
     def click_finish_button(self):
         self.click(self.FINISH_BUTTON)
