@@ -17,6 +17,7 @@ class CheckoutPage(BasePage):
 
     def click_continue_button(self):
         self.click(self.CONTINUE_BUTTON)
+        self.take_screenshot("debug_continue")
 
     def click_finish_button(self):
         self.click(self.FINISH_BUTTON)
