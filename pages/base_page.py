@@ -7,7 +7,10 @@ class BasePage:
         self.driver = driver
 
     def click(self,locator):
-        wait_for_clickable(self.driver,locator).click()
+        element = wait_for_clickable(self.driver,locator)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);",element)
+        self.driver.execute_script("arguments[0].click();",element)
+
 
     def type_text(self,locator,text):
         element = wait_for_clickable(self.driver,locator)
@@ -15,7 +18,7 @@ class BasePage:
         element.send_keys(text)
 
     def get_text(self,locator):
-        return wait_for_visibility(self.driver,locator).text
+        return wait_for_clickable(self.driver,locator).text
     
     def is_displayed(self,locator):
         return wait_for_visibility(self.driver,locator).is_displayed()
