@@ -35,6 +35,7 @@ def test_ecommerce_flow(driver):
     login_page.wait_for_page("checkout-step-one.html")
     checkout_page.enter_checkout_details(FIRST_NAME,LAST_NAME,POSTAL_CODE)
     checkout_page.click_continue_button()
+    login_page.wait_for_page("checkout-step-two.html")
     checkout_page.click_finish_button()
     
     assert "Thank you for your order!" in driver.page_source
